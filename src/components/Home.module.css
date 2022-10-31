@@ -1,0 +1,6 @@
+.home {
+    height: calc(100vh - 50px);
+    width: 100%;
+    background: rgb(222,185,0);
+    background: linear-gradient(21deg, rgba(222,185,0,1) 100%, rgba(47,243,224,1) 100%); 
+}
