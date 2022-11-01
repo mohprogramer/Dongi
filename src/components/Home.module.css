@@ -1,6 +1,123 @@
+
+
 .home {
     height: calc(100vh - 50px);
     width: 100%;
     background: rgb(222,185,0);
     background: linear-gradient(21deg, rgba(222,185,0,1) 100%, rgba(47,243,224,1) 100%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.homeContainer {
+    width: 400px;
+    height: 500px;
+    padding: 40px;
+}
+
+.madarKharj {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.madarKharjContainer input {
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.mablaghContainer input {
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.mablaghContainer {
+    margin-right: 30px;
+}
+
+.mablagh {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.tedad {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.tedadContainer input {
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.dostan {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.dostanContainer input {
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.dostanContainer {
+    margin-left: 50px;
+}
+
+.button {
+    all: unset;
+    background-color: #F51720;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.button:hover {
+    background-color: #EF7C8E;
+    transition:all  0.2s ;
+    cursor: pointer;
+}
+
+span {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+input::placeholder{
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+
+
+
+.showDong .text {
+ margin-bottom: 50px;
+ background-color: #FADCD9;
+ border-radius: 10px;
+ width: 400px;
+ height: 50px;
+ display: flex;
+ justify-content: center;
+}
+
+.showDong h3 {
+    margin-top: 12px;
+}
+
+
+.showDong span {
+    font-size: large;
 }

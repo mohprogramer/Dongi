@@ -29,8 +29,11 @@ const Home = () => {
     }
 
     const [goCalc , setGoCalc] = useState(false)
-    const clickHandler = () =>{
-        setGoCalc(true);
+
+    const submitHandler = () =>{
+        setTouched({ mablagh:true , tedad:true , madarKharj:true , dostan:true})
+        if(Object.keys(errors).length === 0)
+                setGoCalc(true);
     }
 
     const [errors , setErrors] = useState({})
@@ -57,32 +60,43 @@ const Home = () => {
             {
                 !goCalc ? 
                         <div className={styles.setDong}>
-                            <div>
+                            <div className={styles.madarKharj}>
+                                <div className={styles.madarKharjContainer}>
+                                    <input type="text" placeholder='نام مادر خرج ' name='madarKharj' value={data.madarKharj} onChange={changeHandler} onFocus={touchHandler}/>
+                                    <label> :نام مادر خرج </label>    
+                                </div>
                                 {errors.madarKharj && touched.madarKharj && <span>{errors.madarKharj}</span>}
-                                <input type="text" placeholder='نام مادر خرج ' name='madarKharj' value={data.madarKharj} onChange={changeHandler} onFocus={touchHandler}/>
-                                <label> :نام مادر خرج </label>
+                                
                             </div>
-                            <div>
+                            <div className={styles.mablagh}>
+                                <div className={styles.mablaghContainer}>
+                                    <input type="number" placeholder='مبلغ' name='mablagh' value={data.mablagh} onChange={changeHandler}  onFocus={touchHandler}/>                                    
+                                    <label> :مبلغ کل </label>
+                                </div>
                                 {errors.mablagh && touched.mablagh && <span>{errors.mablagh}</span>}
-                                <input type="number" placeholder='مبلغ' name='mablagh' value={data.mablagh} onChange={changeHandler}  onFocus={touchHandler}/>
-                                <label> :مبلغ کل </label>
                             </div>
-                            <div>
+                            <div className={styles.tedad}>
+                                <div className={styles.tedadContainer}>
+                                    <input type="number" placeholder='چند نفر بودید؟'  name='tedad' value={data.tedad} onChange={changeHandler} onFocus={touchHandler}/>    
+                                    <label> چند نفر بودید؟</label>
+                                </div>
                                 {errors.tedad && touched.tedad && <span>{errors.tedad}</span>}
-                                <input type="number" placeholder='چند نفر بودید؟'  name='tedad' value={data.tedad} onChange={changeHandler} onFocus={touchHandler}/>    
-                                <label> چند نفر بودید؟</label>
                             </div>
-                            <div>
+                            <div className={styles.dostan}>
+                                <div className={styles.dostanContainer}>
+                                    <input type="text" placeholder='مثلا محمد رضا پوریا'  name='dostan' value={data.dostan} onChange={changeHandler} onFocus={touchHandler}/>
+                                    <label> :  اسم دوستات رو بنویس</label>
+                                </div>
                                 {errors.dostan && touched.dostan && <span>{errors.dostan}</span>}
-                                <input type="text" placeholder='مثلا محمد رضا پوریا'  name='dostan' value={data.dostan} onChange={changeHandler} onFocus={touchHandler}/>
-                                <label> اسم دوستات رو بنویس</label>
                             </div>
                             
-                            <button onClick={clickHandler}>محاسبه</button> 
+                            <button className={styles.button} onClick={submitHandler}>محاسبه</button> 
                         </div>    
                         :
                         <div className={styles.showDong}>
-                            <h3>مبلغ کل : <span>{data.mablagh}</span></h3>
+                            <div className={styles.text}>
+                                <h3>مبلغ کل : <span>{data.mablagh}</span></h3>
+                            </div>
                             {
                                 data.dostan.split(" ").map(item => <DongBacheha key={uuidv4()} name={item} amount={data.mablagh} number={data.tedad} />)
                             }

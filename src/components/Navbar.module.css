@@ -1,5 +1,13 @@
 .navbar {
-    height: 50px;
+    height: 60px;
     background: rgb(95,255,245);
 background: linear-gradient(149deg, rgba(95,255,245,1) 100%, rgba(47,243,224,1) 100%);
+
+}
+
+.navbar h1 {
+font-family: 'Roboto Condensed', sans-serif;
+font-weight: bolder;
+padding: 10px;
+color: #F51720;
 }
